@@ -1,0 +1,67 @@
+﻿owes_goblin_gold = {
+	index = 500
+	personality = no
+	opposites = {
+		goblin
+	}
+
+	compatibility = {
+		
+	}
+
+	stewardship = -2
+	stress_gain_mult = 0.4
+	
+	attraction_opinion = -10
+	same_opinion = 0
+	opposite_opinion = +20
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_owes_goblin_gold_desc
+			}
+			desc = trait_owes_goblin_gold_character_desc
+		}
+	}
+
+	ai_greed = medium_positive_ai_value
+	ai_energy = low_negative_ai_value
+}
+
+banished_the_goblins = {
+	index = 501
+	personality = no
+	opposites = {
+		goblin
+	}
+
+	compatibility = {
+		
+	}
+
+	stewardship = 3
+	stress_loss_mult = 0.5
+	
+	attraction_opinion = 5
+	same_opinion = 25
+	opposite_opinion = -100
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_banished_the_goblins_desc
+			}
+			desc = trait_banished_the_goblins_character_desc
+		}
+	}
+
+	ai_greed = high_positive_ai_value
+	ai_energy = low_positive_ai_value
+}

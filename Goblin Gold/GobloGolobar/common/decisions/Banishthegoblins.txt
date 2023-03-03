@@ -1,0 +1,39 @@
+﻿banist_the_goblins_decision = {
+	title = banish_the_goblins_title			# override title, default: "<key>"; supports dynamic descriptions like in events (first_valid, ...); scope: character
+	picture = "gfx/interface/illustrations/decisions/banish.dds"
+	ai_goal = no
+	ai_check_frequency = 0
+
+	selection_tooltip = banish_the_goblins_tooltip
+	desc = banish_the_goblins_decision_desc
+	confirm_text = banish_the_goblins_decision_confirm
+
+	is_shown = {
+		NOT = {
+			OR = {
+				has_trait = goblin
+				has_trait = banished_the_goblins
+			}
+		}
+		has_trait = owes_goblin_gold
+	}
+	
+
+	cost = {
+		prestige = 500
+	}
+
+	effect = {
+		remove_trait = owes_goblin_gold
+		add_trait = banished_the_goblins
+                add_gold = 1000
+	}
+
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 1
+	}
+
+}

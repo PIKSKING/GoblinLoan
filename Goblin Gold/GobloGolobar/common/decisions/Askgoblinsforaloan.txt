@@ -1,0 +1,55 @@
+﻿Ask_for_a_loan_from_Goblins_decision = {
+	picture = "gfx/interface/illustrations/decisions/goblo.dds"
+        desc = goblo_desc
+        cooldown = { days = 1095 }
+
+	is_shown = {
+		debug_only = no
+	}
+        
+        sort_order = 0
+
+	effect = {
+		custom_tooltip = goblo_tooltip
+		remove_short_term_gold = 5
+		add_gold = 500
+	}
+
+	ai_check_interval = 0
+}
+
+payback_the_goblins_decision = {
+	title = payback_the_goblins_title			# override title, default: "<key>"; supports dynamic descriptions like in events (first_valid, ...); scope: character
+	picture = "gfx/interface/illustrations/decisions/paygoblins.dds"
+	ai_goal = no
+	ai_check_frequency = 120
+
+	selection_tooltip = payback_the_goblins_tooltip
+	desc = payback_the_goblins_decision_desc
+	confirm_text = payback_the_goblins_decision_confirm
+
+	is_shown = {
+		NOT = {
+			OR = {
+				has_trait = banished_the_goblins
+			}
+		}
+		has_trait = owes_goblin_gold
+	}
+	
+
+	cost = {
+		gold = 500
+                piety = 100
+	}
+
+	effect = {
+		remove_trait = owes_goblin_gold
+		add_piety = 200
+	}
+
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 2
